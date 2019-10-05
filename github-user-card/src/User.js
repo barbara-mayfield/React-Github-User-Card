@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Follower from './Follower'
+import styled from 'styled-components';
+
+const CustomDiv = styled.div`
+    border: 1px solid black;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+`
 
 class User extends Component {
     constructor() {
@@ -23,18 +33,36 @@ class User extends Component {
           })
       }
 
+      handleChange = (event) => {
+        this.setState({
+          data: event.target.value
+        })
+      }
+    
+
     render() {
         return (
-            <div className="user-card">
+            <>
+            <select value="this.state.login" onChange={this.handleChange}>
+                <option value="">Select User:</option>
+                <option value="barbara-mayfield">barbara-mayfield</option>
+                <option value="Amber-Pittman">Amber-Pittman</option>
+                <option value="ron-hughes">ron-hughes</option>
+                <option value="LoralieFlint">LoralieFlint</option>
+                <option value="Skraus5628">Skraus5628</option>
+            </select>
+
+            <CustomDiv className="user-card">
             <h1>User Card</h1>
-            <img src={this.state.data.avatar_url} />
+            <img src={this.state.data.avatar_url} alt={this.state.name} />
             <h2>{this.state.data.login}</h2>
             <h2>{this.state.data.name}</h2>
             <h4>{this.state.data.company}</h4>
             <a href={this.state.data.url}>Profile</a>
             <p>{this.state.data.bio}</p>
-            
-            </div>
+            <Follower />
+            </CustomDiv>
+            </>
         )
     }
 }
