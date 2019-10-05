@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import User from './User'
-import Follower from './Follower'
 import './App.css';
 
+import User from './User'
+import Follower from './Follower'
+
 class App extends Component {
+
   render () {
     return (
       <>
