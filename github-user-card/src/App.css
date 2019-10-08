@@ -1,0 +1,25 @@
+html, body {
+  background: #D9D0DE;
+}
+
+p {
+  margin: 40px;
+  padding: 18px;
+  text-align: justify;
+}
+
+img {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 2rem;
+}
+
+.avatar {
+  margin: 0 auto;
+}
+
+.user-card h1 {
+  text-align: right;
+  margin: 1rem;
+  margin-right: 2rem;
+}
