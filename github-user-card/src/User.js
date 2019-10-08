@@ -5,10 +5,13 @@ import styled from 'styled-components';
 
 const CustomDiv = styled.div`
     border: 1px solid black;
-    width: 75%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    text-align: center;
+    border-radius: 4rem;
+    background: #BC8DA0;
 `
 
 class User extends Component {
@@ -54,7 +57,7 @@ class User extends Component {
 
             <CustomDiv className="user-card">
             <h1>User Card</h1>
-            <img src={this.state.data.avatar_url} alt={this.state.name} />
+            <img className="avatar" src={this.state.data.avatar_url} alt={this.state.name} />
             <h2>{this.state.data.login}</h2>
             <h2>{this.state.data.name}</h2>
             <h4>{this.state.data.company}</h4>

@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const FollowerDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+`
 
 class Follower extends Component {
     constructor() {
@@ -26,13 +34,16 @@ class Follower extends Component {
     render() {
         return (
             <>
-            {this.state.followers.map(follower => (
-                <div className="followers" key={follower.id}>
-                    <h2>Followers</h2>
-                    <img src={follower.avatar_url} alt={follower.name} />
-                    <h3>{follower.login}</h3>
-                </div>
+            <h2>Followers</h2>
+            
+            <FollowerDiv className="follower-container">
+                {this.state.followers.map(follower => (
+                    <div className="followers" key={follower.id}>
+                        <img src={follower.avatar_url} alt={follower.name} />
+                        <h3>{follower.login}</h3>
+                    </div>
             ))}
+            </FollowerDiv>
             </>
         )
     }
